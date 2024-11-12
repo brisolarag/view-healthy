@@ -1,0 +1,79 @@
+<div id="profile-container">
+    <div class="container-topinfos">
+        <img src="logo/logo.svg" alt="Logo" />
+        <div class="profile-informations">
+            <p><span>Name</span>{{user.fullName}}</p>
+            <p><span>CPF</span>{{user.cpf}}</p>
+            <p><span>Sex</span>{{user.sex}}</p>
+            <p><span>Birth date</span>{{user.birthDate | date: 'dd/MM/yyyy'}}</p>
+            <p><span>Email</span>{{user.email}}</p>
+            <p><span>Age</span>{{12}} years</p>
+            <p><span>Heigth</span>{{user.heigth}}</p>
+            <p><span>Last Weigth</span>{{123}} kg</p>
+            <p><span>Diets count</span>{{12}} diets done</p>
+            <p><span>Weigth lost</span>- {{12}} kg</p>
+            <p><span>Active since</span>{{user.birthDate | date: 'dd/MM/yyyy'}}</p>
+        </div>
+    </div>
+
+
+    <div class="table-content">
+        <div class="table-diets">
+            <table mat-table [dataSource]="dataSource">
+              
+              <!-- ID Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let diet"> {{ diet.id }} </td>
+              </ng-container>
+              
+              <!-- Exercise Level Column -->
+              <ng-container matColumnDef="exercise_level">
+                <th mat-header-cell *matHeaderCellDef> Exercise Level </th>
+                <td mat-cell *matCellDef="let diet"> {{ diet.exerciseLevel }} </td>
+              </ng-container>
+              
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weigth">
+                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                <td mat-cell *matCellDef="let diet"> {{ diet.weigth }} kg</td>
+              </ng-container>
+              
+              <!-- BMR Column -->
+              <ng-container matColumnDef="bmr">
+                <th mat-header-cell *matHeaderCellDef> BMR </th>
+                <td mat-cell *matCellDef="let diet"> {{ diet.bmr }} kcal</td>
+              </ng-container>
+              
+              <!-- Median Kcal Lose Column -->
+              <ng-container matColumnDef="median_kcal_lose">
+                <th mat-header-cell *matHeaderCellDef> Median Kcal Lose </th>
+                <td mat-cell *matCellDef="let diet"> {{ diet.medianKcalLose }} kcal</td>
+              </ng-container>
+              
+              <!-- Recommended Kcal to Eat Column -->
+              <ng-container matColumnDef="recommended_kcal_eat">
+                <th mat-header-cell *matHeaderCellDef> Recommended Kcal to Eat </th>
+                <td mat-cell *matCellDef="let diet"> {{ diet.recomendedKcalToEat }} kcal</td>
+              </ng-container>
+
+              <ng-container matColumnDef="macros">
+                <th mat-header-cell *matHeaderCellDef> Macros </th>
+                <td mat-cell *matCellDef="let diet"> <span style="text-decoration: underline;">See Macros</span> </td>
+              </ng-container>
+
+              <ng-container matColumnDef="created_at">
+                <th mat-header-cell *matHeaderCellDef> Created At </th>
+                <td mat-cell *matCellDef="let diet"> {{ '01/01/1990' }} </td>
+              </ng-container>
+        
+              <!-- Header and Row Definitions -->
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <mat-paginator [pageSizeOptions]="[9]" showFirstLastButtons></mat-paginator>
+
+    </div>
+      
+</div>

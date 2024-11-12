@@ -1,0 +1,14 @@
+<div id="login-container">
+  <div class="login-component">
+    <img src="logo/logo.svg" alt="Logo" />
+    <mat-form-field appearance="outline">
+      <mat-label>Select the user</mat-label>
+      <mat-select (selectionChange)="onUserSelect($event)">
+        @for (user of users; track $index) 
+        {
+          <mat-option value="{{user.cpf}}">{{user.fullName}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

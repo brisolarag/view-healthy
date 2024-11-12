@@ -1,0 +1,32 @@
+// :host {
+// }
+#login-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+}
+
+.login-component {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    mat-form-field {
+        width: 100%;
+    }
+    img {
+        width: 200px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+}

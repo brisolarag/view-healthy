@@ -1,0 +1,13 @@
+<div id="navbar-container">
+    <img src="logo/logo.svg" alt="Logo" />
+
+    <div class="middle-container">
+        <nav-bar-item [text]="'Profile'" [link]="'/profile'"></nav-bar-item>
+        <nav-bar-item [text]="'New data'" [link]="'/newData'"></nav-bar-item>
+        <nav-bar-item [text]="'History'" [link]="'/history'"></nav-bar-item>
+    </div>
+
+    <div class="right-container">
+        <span matTooltip="Sign out" (click)="logout()"><mat-icon>logout</mat-icon> Logged as {{user.fullName}}</span>
+    </div>
+</div>
